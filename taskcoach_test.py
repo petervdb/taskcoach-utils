@@ -26,6 +26,9 @@ else:
 root = tk_file.getroot()
 print("Document root: %s " % root)
 print("Child elements of root: %s " % len(root))
+count = 0
 for child in root:
 	print(child)
-
+	print(root[count].attrib)
+	print("-----------------------------------------------------------------------------------")
+	count = count + 1

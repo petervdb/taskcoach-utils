@@ -36,3 +36,4 @@ cache/**/*
 .my.cnf
 .mysql_history
 *.delta
+__pycache__
