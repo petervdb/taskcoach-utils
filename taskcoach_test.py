@@ -1,5 +1,18 @@
 #!/usr/bin/python3
 
+# Program                : taskcoach_test.py
+# Version                : 0.2.0
+# Created by             : petervdb
+# Last updated by        : petervdb
+# Creation date          : 29/09/2014
+# Last updated           : 30/09/2014
+# Test Taskcoach version : 1.4.1
+#
+# You can use this script to analyse a Taskcoach tsk file
+#
+# ToDo
+#
+
 from sys import argv
 from os.path import exists
 import xml.etree.ElementTree as etree
@@ -31,7 +44,11 @@ count = 0
 for child in root:
 	print(child)
 	print(root[count].attrib)
+	
+	# cur_text is a JSON string
 	cur_text = root[count].attrib
+	
+	# A need the tag to figure out what I need to do with the JSON string
 	cur_tag = root[count].tag
 	# only works for tasks and categories
 	if cur_tag == "task":
@@ -40,6 +57,7 @@ for child in root:
 	if cur_tag == "category":
 		subject = cur_text['subject']
 		print("Category : %s " % subject)
+	print("Child elements of %s: %s " % (subject, len(root[count])))
 	print("-----------------------------------------------------------------------------------")
 	count = count + 1
 # find all tasks

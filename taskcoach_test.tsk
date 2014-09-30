@@ -2,8 +2,9 @@
 <?taskcoach release="1.4.1" tskversion="37"?>
 
 <tasks>
-<task actualstartdate="2014-09-30 11:33:13.065000" creationDateTime="2014-09-30 11:33:13.065000" expandedContexts="('taskviewer',)" id="cc6ebd8f-4884-11e4-954e-005056c00008" modificationDateTime="2014-09-30 11:33:28.155000" plannedstartdate="2014-09-30 11:33:13.065000" priority="10" status="1" subject="Main task 10">
-<task actualstartdate="2014-09-30 11:33:28.154000" creationDateTime="2014-09-30 11:33:28.155000" icon="charts_icon" id="d56d4ab0-4884-11e4-9f08-005056c00008" modificationDateTime="2014-09-30 11:34:10.852000" plannedstartdate="2014-09-30 11:33:28.154000" priority="11" selectedIcon="charts_icon" status="1" subject="Subtask a for Main task 10" />
+<task actualstartdate="2014-09-30 11:33:13.065000" creationDateTime="2014-09-30 11:33:13.065000" expandedContexts="('taskviewer',)" id="cc6ebd8f-4884-11e4-954e-005056c00008" modificationDateTime="2014-09-30 13:25:00.980000" plannedstartdate="2014-09-30 11:33:13.065000" priority="10" status="1" subject="Main task 10">
+<task actualstartdate="2014-09-30 13:25:00.979000" creationDateTime="2014-09-30 13:25:00.979000" icon="book_icon" id="6aa93030-4894-11e4-a614-005056c00008" modificationDateTime="2014-09-30 13:30:48.018000" plannedstartdate="2014-09-30 13:25:00.979000" priority="12" selectedIcon="book_icon" status="1" subject="Subtask B for Main task 10" />
+<task actualstartdate="2014-09-30 11:33:28.154000" creationDateTime="2014-09-30 11:33:28.155000" icon="charts_icon" id="d56d4ab0-4884-11e4-9f08-005056c00008" modificationDateTime="2014-09-30 13:24:56.008000" plannedstartdate="2014-09-30 11:33:28.154000" priority="11" selectedIcon="charts_icon" status="1" subject="Subtask A for Main task 10" />
 </task>
 <task actualstartdate="2014-09-28 20:32:48.051000" creationDateTime="2014-09-28 20:32:48.052000" id="d89a3740-473d-11e4-a374-e549d3e32f4c" modificationDateTime="2014-09-30 11:31:50.641000" plannedstartdate="2014-09-28 20:32:48.051000" priority="1" status="1" subject="Test task 1">
 <effort id="9b4dd60f-4884-11e4-a37b-005056c00008" start="2014-09-30 11:31:50" status="1" stop="2014-09-30 11:32:20" />
