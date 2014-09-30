@@ -3,7 +3,9 @@
 
 <tasks>
 <task actualstartdate="2014-09-30 11:33:13.065000" creationDateTime="2014-09-30 11:33:13.065000" expandedContexts="('taskviewer',)" id="cc6ebd8f-4884-11e4-954e-005056c00008" modificationDateTime="2014-09-30 13:25:00.980000" plannedstartdate="2014-09-30 11:33:13.065000" priority="10" status="1" subject="Main task 10">
-<task actualstartdate="2014-09-30 13:25:00.979000" creationDateTime="2014-09-30 13:25:00.979000" icon="book_icon" id="6aa93030-4894-11e4-a614-005056c00008" modificationDateTime="2014-09-30 13:30:48.018000" plannedstartdate="2014-09-30 13:25:00.979000" priority="12" selectedIcon="book_icon" status="1" subject="Subtask B for Main task 10" />
+<task actualstartdate="2014-09-30 13:25:00.979000" creationDateTime="2014-09-30 13:25:00.979000" expandedContexts="('taskviewer',)" icon="books_icon" id="6aa93030-4894-11e4-a614-005056c00008" modificationDateTime="2014-09-30 15:27:41.044000" plannedstartdate="2014-09-30 13:25:00.979000" priority="12" selectedIcon="books_icon" status="1" subject="Subtask B for Main task 10">
+<task actualstartdate="2014-09-30 15:27:41.043000" creationDateTime="2014-09-30 15:27:41.043000" id="8d99d430-48a5-11e4-af6b-005056c00008" modificationDateTime="2014-09-30 15:28:18.634000" plannedstartdate="2014-09-30 15:27:41.043000" status="1" subject="Sub level 3" />
+</task>
 <task actualstartdate="2014-09-30 11:33:28.154000" creationDateTime="2014-09-30 11:33:28.155000" icon="charts_icon" id="d56d4ab0-4884-11e4-9f08-005056c00008" modificationDateTime="2014-09-30 13:24:56.008000" plannedstartdate="2014-09-30 11:33:28.154000" priority="11" selectedIcon="charts_icon" status="1" subject="Subtask A for Main task 10" />
 </task>
 <task actualstartdate="2014-09-28 20:32:48.051000" creationDateTime="2014-09-28 20:32:48.052000" id="d89a3740-473d-11e4-a374-e549d3e32f4c" modificationDateTime="2014-09-30 11:31:50.641000" plannedstartdate="2014-09-28 20:32:48.051000" priority="1" status="1" subject="Test task 1">

@@ -42,7 +42,9 @@ print("Document root: %s " % root)
 print("Child elements of root: %s " % len(root))
 count = 0
 for child in root:
-	print(child)
+	# Display Element information
+	# print(child)
+	# Display content
 	print(root[count].attrib)
 	
 	# cur_text is a JSON string
@@ -58,6 +60,12 @@ for child in root:
 		subject = cur_text['subject']
 		print("Category : %s " % subject)
 	print("Child elements of %s: %s " % (subject, len(root[count])))
+	if len(root[count]) > 0:
+		print("Will analyze child objects for %s." % subject)
+		count2 = 0
+		for child2 in root[count]:
+			print(root[count][count2].attrib)
+			count2 = count2 + 1
 	print("-----------------------------------------------------------------------------------")
 	count = count + 1
 # find all tasks
