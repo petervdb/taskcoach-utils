@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 
 # Program                : taskcoach_test.py
-# Version                : 0.2.0
+# Version                : 0.3.0
 # Created by             : petervdb
 # Last updated by        : petervdb
 # Creation date          : 29/09/2014
-# Last updated           : 30/09/2014
+# Last updated           : 07/10/2014
 # Test Taskcoach version : 1.4.1
 #
 # You can use this script to analyse a Taskcoach tsk file
 #
 # ToDo
+# Create subroutine to be able to go recursively into sub-tasks
 #
 
 from sys import argv
@@ -18,6 +19,20 @@ from os.path import exists
 import xml.etree.ElementTree as etree
 import getopt
 import json
+
+def print_categories():
+	# find all categories
+	allcategories = root.findall('category')
+	print ("Let's display all categories:")
+	print(allcategories)
+	print("-----------------------------------------------------------------------------------")
+
+def print_tasks():
+	# find all tasks
+	alltasks =  root.findall('task')
+	print ("Let's display all tasks:")
+	print(alltasks)
+	print("-----------------------------------------------------------------------------------")
 
 # This is a test program to analyze taskcoach files
 print("This is a small program to analyse your Taskcoach file")
@@ -68,14 +83,7 @@ for child in root:
 			count2 = count2 + 1
 	print("-----------------------------------------------------------------------------------")
 	count = count + 1
-# find all tasks
-alltasks =  root.findall('task')
-print ("Let's display all tasks:")
-print(alltasks)
-print("-----------------------------------------------------------------------------------")
 
-# find all categories
-allcategories = root.findall('category')
-print ("Let's display all categories:")
-print(allcategories)
-print("-----------------------------------------------------------------------------------")
+# print_tasks()
+# print_categories()
+
