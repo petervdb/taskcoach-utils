@@ -34,6 +34,15 @@ def print_tasks():
 	print(alltasks)
 	print("-----------------------------------------------------------------------------------")
 
+def check_taskcoach_file():
+	# Quit if file does not exist
+	if exists(taskfile):
+		tk_file = etree.parse(taskfile)
+		return(tk_file)
+	else:
+		print("Sorry, %s does not exist." % taskfile)
+		exit(1)
+
 # This is a test program to analyze taskcoach files
 print("This is a small program to analyse your Taskcoach file")
 
@@ -45,12 +54,7 @@ except getopt.GetoptError:
 	print("Usage: %s <toachcoach_file.tsk>" % script)
 	exit(2)
 
-# Quit if file does not exist
-if exists(taskfile):
-	tk_file = etree.parse(taskfile)
-else:
-	print("Sorry, %s does not exist." % taskfile)
-	exit(1)
+tk_file = check_taskcoach_file()
 
 root = tk_file.getroot()
 print("Document root: %s " % root)
