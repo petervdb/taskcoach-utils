@@ -43,6 +43,37 @@ def check_taskcoach_file():
 		print("Sorry, %s does not exist." % taskfile)
 		exit(1)
 
+def parse_taskcoach_file(root):
+	count = 0
+	for child in root:
+		# Display Element information
+		# print(child)
+		# Display content
+		print(root[count].attrib)
+		
+		# cur_text is a JSON string
+		cur_text = root[count].attrib
+		
+		# A need the tag to figure out what I need to do with the JSON string
+		cur_tag = root[count].tag
+		# only works for tasks and categories
+		if cur_tag == "task":
+			subject = cur_text['subject']
+			print("Task : %s " % subject)
+		if cur_tag == "category":
+			subject = cur_text['subject']
+			print("Category : %s " % subject)
+		print("Child elements of %s: %s " % (subject, len(root[count])))
+		if len(root[count]) > 0:
+			print("Will analyze child objects for %s." % subject)
+			count2 = 0
+			for child2 in root[count]:
+				print(root[count][count2].attrib)
+				count2 = count2 + 1
+		print("-----------------------------------------------------------------------------------")
+		count = count + 1
+
+
 # This is a test program to analyze taskcoach files
 print("This is a small program to analyse your Taskcoach file")
 
@@ -59,34 +90,8 @@ tk_file = check_taskcoach_file()
 root = tk_file.getroot()
 print("Document root: %s " % root)
 print("Child elements of root: %s " % len(root))
-count = 0
-for child in root:
-	# Display Element information
-	# print(child)
-	# Display content
-	print(root[count].attrib)
-	
-	# cur_text is a JSON string
-	cur_text = root[count].attrib
-	
-	# A need the tag to figure out what I need to do with the JSON string
-	cur_tag = root[count].tag
-	# only works for tasks and categories
-	if cur_tag == "task":
-		subject = cur_text['subject']
-		print("Task : %s " % subject)
-	if cur_tag == "category":
-		subject = cur_text['subject']
-		print("Category : %s " % subject)
-	print("Child elements of %s: %s " % (subject, len(root[count])))
-	if len(root[count]) > 0:
-		print("Will analyze child objects for %s." % subject)
-		count2 = 0
-		for child2 in root[count]:
-			print(root[count][count2].attrib)
-			count2 = count2 + 1
-	print("-----------------------------------------------------------------------------------")
-	count = count + 1
+
+parse_taskcoach_file(root)
 
 # print_tasks()
 # print_categories()
