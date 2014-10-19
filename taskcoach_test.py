@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 # Program                : taskcoach_test.py
-# Version                : 0.3.0
+# Version                : 0.3.1
 # Created by             : petervdb
 # Last updated by        : petervdb
 # Creation date          : 29/09/2014
-# Last updated           : 07/10/2014
+# Last updated           : 19/10/2014
 # Test Taskcoach version : 1.4.1
 #
 # You can use this script to analyse a Taskcoach tsk file
@@ -45,6 +45,8 @@ def check_taskcoach_file():
 
 def parse_taskcoach_file(root):
 	count = 0
+	tasks = 0
+	cats = 0
 	for child in root:
 		# Display Element information
 		# print(child)
@@ -58,21 +60,26 @@ def parse_taskcoach_file(root):
 		cur_tag = root[count].tag
 		# only works for tasks and categories
 		if cur_tag == "task":
+			tasks = tasks + 1
 			subject = cur_text['subject']
-			print("Task : %s " % subject)
+			print("Task %s : %s " % (tasks, subject))
 		if cur_tag == "category":
+			cats = cats + 1
 			subject = cur_text['subject']
-			print("Category : %s " % subject)
+			print("Category %s : %s " % (cats, subject))
 		print("Child elements of %s: %s " % (subject, len(root[count])))
 		if len(root[count]) > 0:
-			print("Will analyze child objects for %s." % subject)
-			count2 = 0
-			for child2 in root[count]:
-				print(root[count][count2].attrib)
-				count2 = count2 + 1
+			parse_child_object(count,subject)
 		print("-----------------------------------------------------------------------------------")
 		count = count + 1
 
+def parse_child_object(count,subject):
+	print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+	print("Will analyze child objects for %s." % subject)
+	count2 = 0
+	for child2 in root[count]:
+		print(root[count][count2].attrib)
+		count2 = count2 + 1
 
 # This is a test program to analyze taskcoach files
 print("This is a small program to analyse your Taskcoach file")
