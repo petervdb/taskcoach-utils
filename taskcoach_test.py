@@ -51,7 +51,7 @@ def parse_taskcoach_file(root):
 		# Display Element information
 		# print(child)
 		# Display content
-		print(root[count].attrib)
+		print("> %s ", root[count].attrib)
 		
 		# cur_text is a JSON string
 		cur_text = root[count].attrib
@@ -62,11 +62,11 @@ def parse_taskcoach_file(root):
 		if cur_tag == "task":
 			tasks = tasks + 1
 			subject = cur_text['subject']
-			print("Task %s : %s " % (tasks, subject))
+			print("> Task %s : %s " % (tasks, subject))
 		if cur_tag == "category":
 			cats = cats + 1
 			subject = cur_text['subject']
-			print("Category %s : %s " % (cats, subject))
+			print("> Category %s : %s " % (cats, subject))
 		print("Child elements of %s: %s " % (subject, len(root[count])))
 		if len(root[count]) > 0:
 			parse_child_object(count,subject)
@@ -74,12 +74,34 @@ def parse_taskcoach_file(root):
 		count = count + 1
 
 def parse_child_object(count,subject):
-	print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-	print("Will analyze child objects for %s." % subject)
+	print("> > > > > > > > > >")
+	print("> Will analyze child objects for %s." % subject)
 	count2 = 0
 	for child2 in root[count]:
-		print(root[count][count2].attrib)
+		print("> %s ", root[count][count2].attrib)
+		if len(root[count][count2]) > 0:
+			parse_child_object2(count,count2,subject)
 		count2 = count2 + 1
+
+def parse_child_object2(count,count2,subject):
+	print(">> >> >> >> >> >> >> >> >> >>")
+	print(">> Will analyze child objects for %s." % subject)
+	count3 = 0
+	for child3 in root[count][count2]:
+		print(">> %s ", root[count][count2][count3].attrib)
+		if len(root[count][count2][count3]) > 0:
+			parse_child_object3(count,count2,count3,subject)
+		count3 = count3 + 1
+
+def parse_child_object3(count,count2,count3,subject):
+	print(">>> >>> >>> >>> >>> >>> >>> >>> >>> >>>")
+	print(">>> Will analyze child objects for %s." % subject)
+	count4 = 0
+	for child4 in root[count][count2][count3]:
+		print(">>> %s ", root[count][count2][count3][count4].attrib)
+		if len(root[count][count2][count3][count4]) > 0:
+			print(">>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>>")
+		count4 = count4 + 1
 
 # This is a test program to analyze taskcoach files
 print("This is a small program to analyse your Taskcoach file")
