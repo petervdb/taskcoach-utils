@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 
 # Program                : taskcoach_test.py
-# Version                : 0.3.1
+# Version                : 0.3.2
 # Created by             : petervdb
 # Last updated by        : petervdb
 # Creation date          : 29/09/2014
-# Last updated           : 19/10/2014
+# Last updated           : 03/11/2014
 # Test Taskcoach version : 1.4.1
 #
 # You can use this script to analyse a Taskcoach tsk file
 #
 # ToDo
-# Create subroutine to be able to go recursively into sub-tasks
+# Create subroutine to be able to go recursively into sub-tasks without limit (currenly limited to 5)
 #
 
 from sys import argv
@@ -100,8 +100,18 @@ def parse_child_object3(count,count2,count3,subject):
 	for child4 in root[count][count2][count3]:
 		print(">>> %s ", root[count][count2][count3][count4].attrib)
 		if len(root[count][count2][count3][count4]) > 0:
-			print(">>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>>")
+			parse_child_object4(count,count2,count3,count4,subject)
 		count4 = count4 + 1
+
+def parse_child_object4(count,count2,count3,count4,subject):
+	print(">>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>> >>>>")
+	print(">>>> Will analyze child objects for %s." % subject)
+	count5 = 0
+	for child5 in root[count][count2][count3][count4]:
+		print(">>> %s ", root[count][count2][count3][count4][count5].attrib)
+		if len(root[count][count2][count3][count4][count5]) > 0:
+			print(">>>>> >>>>> >>>>> >>>>> >>>>> >>>>> >>>>> >>>>> >>>>> >>>>>")
+		count5 = count5 + 1
 
 # This is a test program to analyze taskcoach files
 print("This is a small program to analyse your Taskcoach file")
