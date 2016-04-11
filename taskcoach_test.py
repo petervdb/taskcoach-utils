@@ -5,14 +5,17 @@
 # Created by             : petervdb
 # Last updated by        : petervdb
 # Creation date          : 29/09/2014
-# Last updated           : 03/11/2014
-# Test Taskcoach version : 1.4.1
+# Last updated           : 11/04/2016
+# Test Taskcoach version : 1.4.3
 #
 # You can use this script to analyse a Taskcoach tsk file
 #
 # ToDo
 # Create subroutine to be able to go recursively into sub-tasks without limit (currenly limited to 5)
 #
+# Example execution: 
+# python3 taskcoach_test.py ./taskcoach_test.tsk
+# ./taskcoach_test.py ./taskcoach_test.tsk
 
 from sys import argv
 from os.path import exists
