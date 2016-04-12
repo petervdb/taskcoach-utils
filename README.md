@@ -6,8 +6,9 @@ General information
 This repository contains some additional tools to be used in comination with Tashcoach (http://taskcoach.org)
 The goals I want to achieve with these tools are:
 - being able to translate Taskcoach xml format to JSON format
-- export Taskcoach files to MongoDB
-- export Taskcoach files to CouchDB
+- export Taskcoach files to NoSQL system like MongoDB
+- export Taskcoach files to relational database systems like MySQL/MariaDB and MSSQL
+- create synchronisation mechanism to centralize taskcoach files
 - ...
 
 History
