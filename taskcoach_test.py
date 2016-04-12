@@ -12,6 +12,7 @@
 #
 # ToDo
 # Create subroutine to be able to go recursively into sub-tasks without limit (currenly limited to 5)
+# Enable arguments to retrieve only specific data. For example: categories, task depth, priorities, dates
 #
 # Example execution: 
 # python3 taskcoach_test.py ./taskcoach_test.tsk
